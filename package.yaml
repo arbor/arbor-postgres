@@ -1,0 +1,82 @@
+name:                customer-data
+version:             1.0.0
+github:              "packetloop/customer-data"
+license:             MIT
+category:            Services
+author:              Tyler Durden
+maintainer:          tyler.durden@arbor.net
+copyright:           Arbor Networks
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on Github at <https://github.com/packetloop/customer-data#readme>
+
+default-extensions:
+- BangPatterns
+- FlexibleContexts
+- FlexibleInstances
+- GeneralizedNewtypeDeriving
+- MultiParamTypeClasses
+- OverloadedStrings
+- TupleSections
+
+dependencies:
+- base >=4.7 && <5
+- attoparsec
+- bytestring
+- cereal
+- containers
+- deepseq
+- directory
+- exceptions
+- extra
+- io-streams
+- lens
+- monad-control
+- monad-logger
+- mysql-haskell
+- network
+- random
+- resourcet
+- scientific
+- split
+- text
+- text-short
+- time
+- transformers
+- transformers-base
+- vector
+- zlib
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Store.Connect
+    - Store.Execute
+    - Store.Lens
+    - Store.Type
+  ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+
+tests:
+  customer-data-test:
+    main:                Spec.hs
+    source-dirs:
+    - test
+    - src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - customer-data
+    - hspec
+    - hedgehog
+    - hw-hspec-hedgehog
+    - template

@@ -1,3 +1,3 @@
-# Changelog for customer-data
+# Changelog for arbor-postgres
 
 ## Unreleased changes

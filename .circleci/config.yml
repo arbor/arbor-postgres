@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: quay.io/haskell_works/stack-build-minimal:2018-01-29
+      - image: quay.io/haskell_works/stack-build-postgres:18.04
 
     steps:
       - checkout

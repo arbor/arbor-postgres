@@ -14,7 +14,7 @@ data PostgresConfig = PostgresConfig
   { host     :: Text
   , database :: Text
   , user     :: Text
-  , password :: Password
+  , password :: Maybe Password
   } deriving (Eq, Show, Generic)
 
 optsPostgresConfig :: String -> Parser PostgresConfig
@@ -34,7 +34,7 @@ optsPostgresConfig prefix = do
     <> metavar "DB_USER"
     <> help "The postgres user"
     )
-  password <- Password <$> strOption
+  password <- optional $ Password <$> strOption
     (  long (prefix <> "-db-password")
     <> metavar "DB_PASSWORD"
     <> help "The postgres password"

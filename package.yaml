@@ -27,6 +27,7 @@ default-extensions:
 
 dependencies:
 - base                  >= 4.7      && < 5
+- bytestring            >= 0.10     && < 0.11
 - generic-lens          >= 1.0.0.2  && < 2
 - lens                  >= 4.16     && < 5
 - network-uri           >= 2.6      && < 3

@@ -1,5 +1,4 @@
 {-# LANGUAGE DataKinds        #-}
-{-# LANGUAGE TupleSections    #-}
 {-# LANGUAGE TypeApplications #-}
 
 module Arbor.Postgres.Core where
@@ -8,7 +7,7 @@ import Arbor.Postgres.Config     (PostgresConfig)
 import Arbor.Postgres.Password
 import Control.Lens
 import Data.Generics.Product.Any
-import Data.Monoid
+import Data.Monoid               ((<>))
 import Data.String
 import Network.URI
 

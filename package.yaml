@@ -1,6 +1,6 @@
 name:                arbor-postgres
 version:             0.0.1
-github:              "packetloop/arbor-postgres"
+github:              "arbor/arbor-postgres"
 license:             MIT
 category:            Services
 author:              Arbor Networks
@@ -11,7 +11,7 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-description:         Please see the README on Github at <https://github.com/packetloop/arbor-postgres#readme>
+description:         Please see the README on Github at <https://github.com/arbor/arbor-postgres#readme>
 
 default-extensions:
 - BangPatterns

@@ -3,12 +3,6 @@ resolver: lts-11.17
 packages:
 - .
 
-- location:
-    git: git@github.com:packetloop/hs-arbor-logger.git
-    commit: 85f56acbd43625793b09aa5281c6224a7cca7d76
-  extra-dep: true
-
-
 extra-deps:
   - hedgehog-0.5.2
   - hw-hspec-hedgehog-0.1.0.1

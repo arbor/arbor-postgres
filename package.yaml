@@ -7,6 +7,8 @@ author:              Arbor Networks
 maintainer:          mayhem@arbor.net
 copyright:           Arbor Networks
 
+synopsis: Convenience types and functions to make `postgresql-simple` easier and less error-prone to use.
+
 extra-source-files:
 - README.md
 - ChangeLog.md

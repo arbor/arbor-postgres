@@ -77,11 +77,11 @@ configToConnectInfo pgc =
               Nothing           -> ""
               Just (Password p) -> p
   in ConnectInfo
-    { connectHost = unpack $ host pgc
+    { connectHost     = unpack $ host pgc
     , connectDatabase = unpack $ database pgc
-    , connectUser = unpack $ user pgc
+    , connectUser     = unpack $ user pgc
     , connectPassword = unpack pass
-    , connectPort = 5432
+    , connectPort     = 5432
     }
 
 connectInfoToConfig :: PG.ConnectInfo -> PostgresConfig
@@ -90,8 +90,8 @@ connectInfoToConfig pgc =
               "" -> Nothing
               p  -> Just . Password . pack $ p
   in PostgresConfig
-    { host = pack $ connectHost pgc
+    { host     = pack $ connectHost pgc
     , database = pack $ connectDatabase pgc
-    , user = pack $ connectUser pgc
+    , user     = pack $ connectUser pgc
     , password = pass
     }

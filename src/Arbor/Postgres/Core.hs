@@ -18,21 +18,10 @@ import Network.URI
 import qualified Arbor.Postgres.Config      as Z
 import qualified Arbor.Postgres.Env         as E
 import qualified Data.Text                  as T
-import qualified Data.Text.Encoding         as T
 import qualified Database.PostgreSQL.Simple as PGS
 
 parseConfig :: Z.PostgresConfig -> ByteString
-parseConfig postgresConfig = do
-  let host       = postgresConfig ^. the @"host"
-  let dbname     = postgresConfig ^. the @"database"
-  let user       = postgresConfig ^. the @"user"
-  let mPassword  = postgresConfig ^. the @"password"
-  let kvPassword = case mPassword of
-        Just (Password password) -> [("password", password)]
-        Nothing                  -> []
-  let kvs = [("host", host), ("dbname", dbname), ("user", user)] <> kvPassword
-  let pairs = kvs <&> (\(k, v) -> k <> "='" <> v <> "'")
-  T.encodeUtf8 $ T.intercalate " " pairs
+parseConfig = PGS.postgreSQLConnectionString . Z.configToConnectInfo
 
 -- because we need a double quoted, not single quoted string,
 -- we need to explicitly not use sql interpolation here.

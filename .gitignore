@@ -20,6 +20,7 @@ docker/rdkafka/
 
 ### Haskell ###
 dist
+dist-newstyle
 cabal-dev
 *.o
 *.hi
@@ -28,7 +29,6 @@ cabal-dev
 .virthualenv
 .hsenv
 .cabal-sandbox/
-*.cabal
 cabal.sandbox.config
 cabal.config
 .stack-work/
@@ -38,6 +38,7 @@ cabal.config
 *.prof
 /tmp
 /out
+.ghc.environment.*
 
 ### Emacs ###
 # -*- mode: gitignore; -*-

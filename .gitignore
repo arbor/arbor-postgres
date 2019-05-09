@@ -39,6 +39,7 @@ cabal.config
 /tmp
 /out
 .ghc.environment.*
+/cabal.project.local
 
 ### Emacs ###
 # -*- mode: gitignore; -*-

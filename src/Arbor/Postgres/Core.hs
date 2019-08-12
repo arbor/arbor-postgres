@@ -4,7 +4,6 @@
 
 module Arbor.Postgres.Core where
 
-import Arbor.Postgres.Password
 import Control.Exception         (catch, throw)
 import Control.Lens
 import Control.Monad             (void)

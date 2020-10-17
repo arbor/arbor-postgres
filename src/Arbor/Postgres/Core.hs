@@ -61,5 +61,5 @@ mkConnectionString config = do
 
 mkResourceURI :: URI -> Table -> [(T.Text, T.Text)] -> URI
 mkResourceURI uri (Table tbl) kvs = do
-  let q = "?" <> T.intercalate "&" (uncurry (\k v -> k <> "=" <> v) <$> (("table", tbl) : kvs)) & T.unpack
+  let q = "?" <> T.intercalate "&" ((\(k, v) -> k <> "=" <> v) <$> (("table", tbl) : kvs)) & T.unpack
   uri { uriQuery = q }
